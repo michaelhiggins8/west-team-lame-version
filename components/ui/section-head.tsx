@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 type SectionHeadProps = {
-  eyebrow: ReactNode;
+  eyebrow?: ReactNode;
   title: ReactNode;
   lede: ReactNode;
 };
@@ -9,7 +9,7 @@ type SectionHeadProps = {
 export function SectionHead({ eyebrow, title, lede }: SectionHeadProps) {
   return (
     <div className="section-head">
-      <div className="eyebrow">{eyebrow}</div>
+      {eyebrow && <div className="eyebrow">{eyebrow}</div>}
       <h2>{title}</h2>
       <p className="lede">{lede}</p>
     </div>

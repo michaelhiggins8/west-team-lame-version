@@ -26,11 +26,7 @@ export function ProofBar() {
           ))}
         </Wrap>
       </div>
-      <div className="proof-note">
-        Ranked #3 among HomeSmart teams overall and #1 serving 55+ communities,
-        as of September 27, 2026. Rankings do not guarantee individual
-        production.
-      </div>
+      
     </>
   );
 }

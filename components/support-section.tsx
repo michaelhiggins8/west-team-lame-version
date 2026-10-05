@@ -1,4 +1,3 @@
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Wrap } from "@/components/ui/wrap";
 
 const SUPPORT_ITEMS = [
@@ -28,7 +27,6 @@ export function SupportSection() {
   return (
     <section className="section support">
       <Wrap>
-        <Eyebrow>Support you can put to work</Eyebrow>
         <h2>
           Real people. Practical help.
           <br />A team that knows this market.

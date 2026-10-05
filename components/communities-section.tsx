@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { Wrap } from "@/components/ui/wrap";
 
 const COMMUNITY_SITE_LABEL = "Official community site";
@@ -76,7 +75,6 @@ export function CommunitiesSection() {
           ))}
         </div>
         <div>
-          <Eyebrow>A West Valley home base</Eyebrow>
           <h2>
             Rooted in Sun City West.
             <br />
@@ -107,17 +105,8 @@ export function CommunitiesSection() {
               </div>
             ))}
           </div>
-          <p className="source-note">
-            Sun City West community figures ·{" "}
-            <a href="https://suncitywest.com/" target="_blank" rel="noreferrer">
-              {COMMUNITY_SITE_LABEL}
-            </a>
-          </p>
-          <p className="local-story">
-            <b>Across the West Valley:</b> Surprise, Peoria and nearby
-            communities. The team’s strongest local focus remains Sun City West
-            and its neighboring communities.
-          </p>
+          
+         
         </div>
       </Wrap>
     </section>

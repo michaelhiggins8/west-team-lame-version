@@ -1,4 +1,3 @@
-import { Eyebrow } from "@/components/ui/eyebrow";
 import { PillLink } from "@/components/ui/pill-link";
 import { Wrap } from "@/components/ui/wrap";
 
@@ -35,7 +34,6 @@ export function TraceySection() {
           <div className="portrait-caption">Replace with a real team photo</div>
         </div>
         <div>
-          <Eyebrow>Meet your team lead</Eyebrow>
           <h2>
             Experience to share.
             <br />A local team to grow with.

@@ -12,9 +12,7 @@ export function Hero() {
     <section className="hero">
       <Wrap className="hero-grid">
         <div>
-          <div className="kicker">
-            HomeSmart West Team · Sun City West, Arizona
-          </div>
+
           <h1>
             Your business.
             <br />
@@ -31,10 +29,7 @@ export function Hero() {
               Talk with Tracey
             </PillLink>
           </div>
-          <p className="micro">
-            Sun City West home base · Serving nearby 55+ communities and the West
-            Valley
-          </p>
+         
         </div>
         <div
           className="hero-art"

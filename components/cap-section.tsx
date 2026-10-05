@@ -15,7 +15,6 @@ export function CapSection() {
     <section className="section cap" id="cap">
       <Wrap>
         <SectionHead
-          eyebrow="Clear numbers. No surprises."
           title="Know the cap before you join."
           lede="Your regular annual commission caps add up to one clear combined ceiling across the West Team and HomeSmart."
         />
@@ -53,10 +52,7 @@ export function CapSection() {
               every transaction. Applicable monthly team-plan fees and personal
               business expenses are separate.
             </p>
-            <div className="transition">
-              <b>2026 transition:</b> The West Team cap is $5,000 through Dec.
-              31, 2026. The full $8,750 annual West Team cap begins Jan. 1, 2027.
-            </div>
+           
           </div>
         </div>
       </Wrap>

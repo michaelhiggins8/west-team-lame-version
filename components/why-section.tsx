@@ -24,7 +24,7 @@ export function WhySection() {
     <section className="section" id="why">
       <Wrap>
         <SectionHead
-          eyebrow="A team should move your business forward"
+          
           title={
             <>
               Your business stays yours.
@@ -43,12 +43,7 @@ export function WhySection() {
             </article>
           ))}
         </div>
-        <div className="truth-note">
-          There is no formal team lead program today. Floor time and team open
-          houses are opportunities to meet people and develop relationships;
-          they do not guarantee clients or results. Any future team-provided
-          leads would follow separate agreement terms.
-        </div>
+       
       </Wrap>
     </section>
   );

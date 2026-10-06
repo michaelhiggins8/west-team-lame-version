@@ -10,28 +10,11 @@ export function TraceySection() {
           role="img"
           aria-label="Placeholder for a photo of Tracey La Rue with the West Team"
         >
-          <svg viewBox="0 0 360 280" aria-hidden="true">
-            <rect width="360" height="280" fill="#d8b28d" />
-            <circle cx="282" cy="58" r="55" fill="#e7c391" />
-            <path d="M0 210 90 143l70 45 80-79 120 87v84H0Z" fill="#a76c51" />
-            <path
-              d="M58 280c6-68 48-101 111-101s102 36 110 101"
-              fill="#173444"
-            />
-            <circle cx="169" cy="105" r="42" fill="#d9aa83" />
-            <path
-              d="M126 103c2-43 84-54 91 7-21-8-29-19-35-28-13 17-31 26-56 29Z"
-              fill="#493629"
-            />
-            <path d="M120 97c16-29 77-41 103-4-27 6-72 6-103 4Z" fill="#bf3039" />
-            <path
-              d="M113 98c18-14 92-13 118 2"
-              stroke="#173444"
-              strokeWidth="5"
-              fill="none"
-            />
-          </svg>
-          <div className="portrait-caption">Replace with a real team photo</div>
+
+
+            <img src="https://pub-809f46bad55343d4ac62b32ba5094106.r2.dev/IMG_4825%20(1).jpeg"></img>
+          
+          <div className="portrait-caption">Best meetings in town</div>
         </div>
         <div>
           <h2>

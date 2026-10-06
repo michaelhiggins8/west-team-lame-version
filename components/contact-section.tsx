@@ -1,9 +1,6 @@
 import { PillLink } from "@/components/ui/pill-link";
 import { Wrap } from "@/components/ui/wrap";
 
-const CONTACT_MAILTO =
-  "mailto:WestTeamAZ@gmail.com?subject=West%20Team%20Recruiting%20Conversation";
-
 export function ContactSection() {
   return (
     <section className="contact" id="contact">
@@ -15,7 +12,7 @@ export function ContactSection() {
             cap. We’ll talk honestly about fit and what you need next.
           </p>
         </div>
-        <PillLink href={CONTACT_MAILTO}>Email the West Team</PillLink>
+        <PillLink href="/contact">Email the West Team</PillLink>
       </Wrap>
     </section>
   );

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>West Team | Homepage Mockup</title>
+<style>
+:root{--ink:#173444;--red:#bf3039;--red-dark:#9e222c;--sand:#f5efe5;--paper:#fffdf9;--terra:#bd6f4c;--gold:#d6ad73;--muted:#5c6b70;--line:#e6ded2;--green:#647665}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+a{color:inherit}
+.wrap{width:min(1160px,calc(100% - 48px));margin:0 auto}
+.topbar{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(23,52,68,.08);background:rgba(255,253,249,.92)}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;min-width:190px}
+.brand-mark{width:42px;height:42px;border:1.5px solid var(--red);border-radius:50%;display:grid;place-items:center;color:var(--red);font:700 18px Georgia,serif;position:relative}
+.brand-mark:after{content:"";position:absolute;bottom:-4px;width:7px;height:7px;background:var(--paper);border-right:1.5px solid var(--red);border-bottom:1.5px solid var(--red);transform:rotate(45deg)}
+.brand-name{font:700 19px Georgia,serif;letter-spacing:.01em;display:block}
+.brand-sub{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-top:1px}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{text-decoration:none;font-size:13px;color:#43555d}
+.nav a:hover{color:var(--red)}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--red);color:white;text-decoration:none;font-weight:700;padding:13px 21px;font-size:13px;transition:.2s}
+.pill:hover{background:var(--red-dark);transform:translateY(-1px)}
+.pill.outline{background:transparent;color:var(--ink);border:1px solid #abb4b5}
+.pill.outline:hover{border-color:var(--red);color:var(--red)}
+.hero{padding:68px 0 54px;background:linear-gradient(180deg,#fbf8f2 0%,#f6efe5 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.03fr;gap:54px;align-items:center}
+.kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:18px}
+h1,h2,h3,p{margin-top:0}
+h1{font:500 clamp(42px,5.2vw,68px)/1.02 Georgia,"Times New Roman",serif;letter-spacing:-.045em;margin-bottom:23px;color:var(--ink)}
+h1 em{color:var(--red);font-style:normal}
+.hero-copy{font-size:17px;max-width:520px;color:#526168;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.micro{font-size:12px;color:var(--muted);margin-top:20px}
+.hero-art{min-height:410px;position:relative;border-radius:4px 92px 4px 4px;background:linear-gradient(140deg,#ead8bd,#f0dbc0 48%,#f7e9d8);overflow:hidden;box-shadow:0 24px 60px rgba(64,46,32,.12)}
+.hero-photo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-art:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,rgba(18,38,46,.28),transparent 58%)}
+.hero-art .photo-note,.hero-art .event-card,.hero-art .small-label{z-index:2}
+.photo-note{position:absolute;right:20px;top:19px;border-radius:3px;background:rgba(255,253,249,.91);padding:9px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.event-card{position:absolute;left:18px;bottom:18px;background:var(--paper);border-left:3px solid var(--red);padding:14px 18px;box-shadow:0 10px 28px rgba(23,52,68,.13);max-width:235px}
+.event-card b{display:block;font:600 16px Georgia,serif;margin-bottom:2px}
+.event-card span{font-size:11px;color:var(--muted)}
+.hero-art .small-label{position:absolute;right:17px;bottom:22px;color:white;text-shadow:0 1px 3px rgba(0,0,0,.3);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+.proof{background:var(--ink);color:white}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.proof-item{padding:21px 17px;border-right:1px solid rgba(255,255,255,.16);font-size:12px;line-height:1.4}
+.proof-item:first-child{padding-left:0}
+.proof-item:last-child{border-right:0}
+.proof-item b{display:block;color:#f4d8b4;font-size:10px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:5px}
+.proof-note{padding:9px 20px;text-align:center;background:#fffdf9;color:var(--muted);font-size:10px;border-bottom:1px solid var(--line)}
+.section{padding:86px 0}
+.section-head{max-width:680px;margin-bottom:38px}
+h2{font:500 clamp(32px,4vw,46px)/1.1 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin-bottom:14px}
+.lede{color:var(--muted);font-size:16px;max-width:650px}
+.eyebrow{font-size:10px;color:var(--red);letter-spacing:.17em;text-transform:uppercase;font-weight:700;margin-bottom:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{border:1px solid var(--line);padding:26px 25px 24px;background:#fff;border-radius:4px;min-height:205px}
+.card-num{font:italic 17px Georgia,serif;color:var(--terra);margin-bottom:23px}
+.card h3{font:600 20px Georgia,serif;margin-bottom:9px}
+.card p{font-size:14px;color:var(--muted);margin-bottom:0}
+.truth-note{margin-top:21px;padding:15px 18px;background:#f7f1e8;border-left:3px solid var(--gold);font-size:12px;color:#536268}
+.local{background:#f6f1e9}
+.local-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+.local-photos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:180px 180px;gap:10px;min-height:370px}
+.local-photo{margin:0;position:relative;overflow:hidden;border-radius:4px;background:#d9c7ad;box-shadow:0 12px 30px rgba(53,44,34,.10)}
+.local-photo-main{grid-row:1 / span 2}
+.local-photo img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .45s}
+.local-photo:hover img{transform:scale(1.035)}
+.photo-caption{position:absolute;left:0;right:0;bottom:0;padding:28px 13px 11px;color:#fff;background:linear-gradient(transparent,rgba(16,31,38,.78));font-size:11px;line-height:1.3}
+.photo-caption b{display:block;font:600 14px Georgia,serif;margin-bottom:3px}
+.photo-caption a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.area-signals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;padding:16px 0 11px;border-top:1px solid #d9cbbb;border-bottom:1px solid #d9cbbb}
+.area-signal strong{display:block;font:600 25px/1 Georgia,serif;color:var(--red)}
+.area-signal span{display:block;margin-top:6px;font-size:10px;line-height:1.25;color:var(--muted)}
+.source-note{font-size:10px;color:var(--muted);margin:9px 0 0}
+.source-note a{color:var(--ink);text-underline-offset:2px}
+.local-story{font-size:12px;color:var(--muted);margin-top:15px}
+.community-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.community{border-top:1px solid #d9cbbb;padding:13px 0 3px;font:600 16px Georgia,serif}
+.community span{display:block;font:12px Arial,sans-serif;color:var(--muted);margin-top:2px}
+.support{background:var(--ink);color:#fff}
+.support .eyebrow{color:#e8bd8b}
+.support h2{color:white}
+.support .lede{color:#d2dcdd}
+.support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:38px}
+.support-item{border-top:1px solid rgba(255,255,255,.3);padding-top:17px}
+.support-item .num{color:#efbd83;font:italic 18px Georgia,serif}
+.support-item h3{font:600 18px Georgia,serif;margin:12px 0 8px}
+.support-item p{color:#d2dcdd;font-size:13px;margin:0}
+.cap{background:#fbf8f2}
+.cap-box{display:grid;grid-template-columns:.87fr 1.13fr;background:#fff;border:1px solid var(--line);box-shadow:0 18px 42px rgba(53,44,34,.06)}
+.cap-primary{padding:42px;background:var(--red);color:#fff}
+.cap-primary .eyebrow{color:#f6d5b2}
+.big-cap{font:500 clamp(54px,7vw,82px)/.95 Georgia,serif;letter-spacing:-.06em;margin:22px 0 9px}
+.cap-primary p{font-size:14px;color:#ffebe0;margin:0}
+.cap-details{padding:38px 42px}
+.cap-equation{display:flex;align-items:stretch;gap:12px;margin:4px 0 23px}
+.cap-part{flex:1;border:1px solid var(--line);padding:17px 15px;background:#fffdf9}
+.cap-part b{display:block;font:600 27px Georgia,serif}
+.cap-part span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+.plus{align-self:center;font-size:22px;color:var(--terra)}
+.cap-total{padding-top:15px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;font-weight:700}
+.cap-total strong{font:600 22px Georgia,serif;color:var(--red)}
+.fineprint{font-size:11px;color:#5a696f;margin:14px 0 0}
+.transition{margin-top:17px;padding:13px 15px;background:#f4eee5;font-size:11px;color:#58666b}
+.tracey{display:grid;grid-template-columns:.78fr 1.22fr;gap:48px;align-items:center}
+.portrait{height:280px;display:grid;place-items:center;background:linear-gradient(145deg,#e7d4b7,#c7875e);position:relative;overflow:hidden;border-radius:3px}
+.portrait svg{position:absolute;inset:0;width:100%;height:100%}
+.portrait-caption{position:absolute;bottom:14px;left:15px;background:var(--paper);padding:7px 11px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.quote{font:italic 23px/1.3 Georgia,serif;color:var(--red);margin:21px 0}
+.contact{background:#efe4d5;padding:68px 0}
+.contact-box{display:flex;justify-content:space-between;align-items:center;gap:32px}
+.contact h2{max-width:600px;margin-bottom:10px}
+.contact p{color:var(--muted);margin-bottom:0;max-width:610px}
+footer{padding:25px 0;color:#718087;font-size:11px}
+.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+@media(max-width:850px){.hero-grid,.local-grid,.cap-box,.tracey{grid-template-columns:1fr}.hero-grid{gap:34px}.hero-art{min-height:350px}.proof-grid{grid-template-columns:1fr 1fr}.proof-item:nth-child(2){border-right:0}.proof-item:first-child{padding-left:17px}.cards{grid-template-columns:1fr 1fr}.support-grid{grid-template-columns:1fr 1fr}.local-photos{grid-template-rows:150px 150px;min-height:310px}.portrait{max-width:420px}}
+@media(max-width:610px){.wrap{width:min(100% - 34px,1160px)}.topbar{height:72px}.nav a:not(.pill){display:none}.brand{min-width:0}.brand-name{font-size:17px}.nav{gap:0}.hero{padding:46px 0 36px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:280px;border-top-right-radius:54px}.proof-grid,.cards,.support-grid{grid-template-columns:1fr}.proof-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.15);padding:15px 4px}.proof-item:first-child{padding-left:4px}.section{padding:62px 0}.cards{gap:11px}.card{min-height:0}.community-list{gap:6px}.community{font-size:14px}.cap-primary,.cap-details{padding:28px 23px}.cap-equation{gap:7px}.cap-part{padding:13px 9px}.cap-part b{font-size:22px}.cap-part span{font-size:10px}.contact-box{align-items:flex-start;flex-direction:column}.foot{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a class="brand" href="#top" aria-label="West Team home">
+      <span class="brand-mark">W</span>
+      <span><span class="brand-name">West Team</span><span class="brand-sub">HomeSmart · Sun City West</span></span>
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#why">Why West Team</a><a href="#communities">Local Communities</a><a href="#cap">The Cap</a><a href="#tracey">Meet Tracey</a>
+      <a class="pill" href="#contact">Let’s talk</a>
+    </nav>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">HomeSmart West Team · Sun City West, Arizona</div>
+      <h1>Your business.<br><em>Better together.</em></h1>
+      <p class="hero-copy">Build your real estate business with a local team that knows Sun City West, shares what works, and shows up for one another across the West Valley.</p>
+      <div class="actions"><a class="pill" href="#why">Meet the West Team</a><a class="pill outline" href="#contact">Talk with Tracey</a></div>
+      <p class="micro">Sun City West home base · Serving nearby 55+ communities and the West Valley</p>
+
+    </div>
+    <div class="hero-art" role="img" aria-label="Illustrated Arizona desert neighborhood with the White Tank Mountains">
+      <img class="hero-photo-img" src="https://suncitywest.com/wp-content/uploads/2023/01/Golf-website-photo.jpg" alt="Sun City West golf course fairway" loading="eager" fetchpriority="high" referrerpolicy="no-referrer">
+      <div class="photo-note">Sun City West · Golf & community</div>
+      <div class="event-card"><b>Tuesday · 8:00 AM</b><span>Team meeting, shared ideas, local know-how.</span></div>
+      <div class="small-label">A local course · Sun City West, Arizona</div>
+    </div>
+  </div>
+</section>
+<div class="proof"><div class="wrap proof-grid">
+  <div class="proof-item"><b>Home base</b>Sun City West office</div>
+  <div class="proof-item"><b>Stay connected</b>Weekly Tuesday meetings</div>
+  <div class="proof-item"><b>Local leadership</b>Ranked #1 serving 55+ communities</div>
+  <div class="proof-item"><b>Defined economics</b>$12,500 combined annual caps</div>
+</div></div>
+<div class="proof-note">Ranked #3 among HomeSmart teams overall and #1 serving 55+ communities, as of September 27, 2026. Rankings do not guarantee individual production.</div>
+<section class="section" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">A team should move your business forward</div><h2>Your business stays yours.<br>The team helps you grow it.</h2><p class="lede">Build your name and client relationships with experienced people nearby—ready to share local knowledge, practical guidance and opportunities to work together.</p></div>
+    <div class="cards">
+      <article class="card"><div class="card-num">01 / OWNERSHIP</div><h3>Your name. Your relationships.</h3><p>Keep building the business and client connections that belong to you, with a team around you when questions come up.</p></article>
+      <article class="card"><div class="card-num">02 / LOCAL KNOW-HOW</div><h3>Know the neighborhoods.</h3><p>Share insight about Sun City West and the surrounding active-adult communities—what clients ask, what matters, and how the market feels block by block.</p></article>
+      <article class="card"><div class="card-num">03 / PEOPLE TO CALL</div><h3>Support in the work.</h3><p>Get direct guidance, exchange ideas with peers and find team open-house opportunities across the West Valley.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section local" id="communities">
+  <div class="wrap local-grid">
+    <div class="local-photos" aria-label="Photos from Sun City West and nearby Sun City">
+      <figure class="local-photo local-photo-main">
+        <img src="https://suncitywest.com/wp-content/uploads/2023/02/Palm-Ridge-Signage.jpg" alt="Palm Ridge Recreation Center sign in Sun City West" loading="eager" referrerpolicy="no-referrer">
+        <figcaption class="photo-caption"><b>Palm Ridge Recreation Center</b><span>Photo: Recreation Centers of Sun City West · <a href="https://suncitywest.com/palmridgereccenter/" target="_blank" rel="noreferrer">Official community site</a></span></figcaption>
+      </figure>
+      <figure class="local-photo">
+        <img src="https://suncitywest.com/wp-content/uploads/2023/02/Palm-Ridge-Activity-Center-3.jpg" alt="Palm Ridge Activity Center exterior in Sun City West" loading="eager" referrerpolicy="no-referrer">
+        <figcaption class="photo-caption"><b>Community life</b><span>Photo: Recreation Centers of Sun City West · <a href="https://suncitywest.com/palmridgereccenter/" target="_blank" rel="noreferrer">Official community site</a></span></figcaption>
+      </figure>
+      <figure class="local-photo">
+        <img src="https://suncitywest.com/wp-content/uploads/2023/02/Palm-Ridge-Activity-Center.jpg" alt="Palm Ridge Activity Center interior in Sun City West" loading="eager" referrerpolicy="no-referrer">
+        <figcaption class="photo-caption"><b>Inside the community</b><span>Photo: Recreation Centers of Sun City West · <a href="https://suncitywest.com/palmridgereccenter/" target="_blank" rel="noreferrer">Official community site</a></span></figcaption>
+      </figure>
+    </div>
+    <div>
+      <div class="eyebrow">A West Valley home base</div>
+      <h2>Rooted in Sun City West.<br>Connected across the West Valley.</h2>
+      <p class="lede">Our home base is Sun City West, with local knowledge across nearby active-adult communities and the broader Northwest Valley. Learn from people who know the neighborhoods, the rhythms and the clients who choose to live here.</p>
+      <div class="community-list">
+        <div class="community">Sun City West<span>Our home base</span></div>
+        <div class="community">Sun City<span>Neighboring community</span></div>
+        <div class="community">Corte Bella<span>55+ community</span></div>
+        <div class="community">The Grand<span>55+ community</span></div>
+      </div>
+      <div class="area-signals" aria-label="Sun City West community amenities">
+        <div class="area-signal"><strong>4</strong><span>recreation centers</span></div>
+        <div class="area-signal"><strong>90+</strong><span>chartered clubs</span></div>
+        <div class="area-signal"><strong>7</strong><span>golf courses</span></div>
+      </div>
+      <p class="source-note">Sun City West community figures · <a href="https://suncitywest.com/" target="_blank" rel="noreferrer">official community site</a></p>
+      <p class="local-story"><b>Across the West Valley:</b> Surprise, Peoria and nearby communities. The team’s strongest local focus remains Sun City West and its neighboring communities.</p>
+    </div>
+  </div>
+</section>
+<section class="section support">
+  <div class="wrap">
+    <div class="eyebrow">Support you can put to work</div>
+    <h2>Real people. Practical help.<br>A team that knows this market.</h2>
+    <p class="lede">A connected team is built through the everyday things: useful conversations, access to a place to work, and people who will talk through the next step with you.</p>
+    <div class="support-grid">
+      <article class="support-item"><span class="num">01</span><h3>Weekly team meetings</h3><p>Tuesdays at 8 AM: share ideas, get local updates and learn from speakers and one another.</p></article>
+      <article class="support-item"><span class="num">02</span><h3>Direct guidance</h3><p>Bring questions to Tracey and get a practical perspective from an experienced team lead.</p></article>
+      <article class="support-item"><span class="num">03</span><h3>Office & workspace</h3><p>A Sun City West place to meet clients, work and connect with your team.</p></article>
+      <article class="support-item"><span class="num">04</span><h3>Floor time & open houses</h3><p>Participate in office floor time and team open houses to meet people and develop relationships.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section cap" id="cap">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Clear numbers. No surprises.</div><h2>Know the cap before you join.</h2><p class="lede">Your regular annual commission caps add up to one clear combined ceiling across the West Team and HomeSmart.</p></div>
+    <div class="cap-box">
+      <div class="cap-primary"><div class="eyebrow">Combined annual cap</div><div class="big-cap">$12,500</div><p>West Team + HomeSmart<br>Paid as you go through transactions, not upfront.</p></div>
+      <div class="cap-details">
+        <div class="cap-equation">
+          <div class="cap-part"><b>$8,750</b><span>West Team cap on eligible agent-originated business</span></div><div class="plus">+</div>
+          <div class="cap-part"><b>$3,750</b><span>HomeSmart cap</span></div>
+        </div>
+        <div class="cap-total"><span>Combined annual cap</span><strong>$12,500</strong></div>
+        <p class="fineprint">From day one, 80% of eligible agent-originated business stays with you; the West Team split is 20% of net commission after HomeSmart brokerage fees until the team cap. HomeSmart’s $399 transaction fee goes toward its cap and stops there. The $99 E&O fee continues on every transaction. Applicable monthly team-plan fees and personal business expenses are separate.</p>
+        <div class="transition"><b>2026 transition:</b> The West Team cap is $5,000 through Dec. 31, 2026. The full $8,750 annual West Team cap begins Jan. 1, 2027.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="tracey">
+  <div class="wrap tracey">
+    <div class="portrait" role="img" aria-label="Placeholder for a photo of Tracey La Rue with the West Team">
+      <svg viewBox="0 0 360 280" aria-hidden="true">
+        <rect width="360" height="280" fill="#d8b28d"/><circle cx="282" cy="58" r="55" fill="#e7c391"/>
+        <path d="M0 210 90 143l70 45 80-79 120 87v84H0Z" fill="#a76c51"/>
+        <path d="M58 280c6-68 48-101 111-101s102 36 110 101" fill="#173444"/>
+        <circle cx="169" cy="105" r="42" fill="#d9aa83"/>
+        <path d="M126 103c2-43 84-54 91 7-21-8-29-19-35-28-13 17-31 26-56 29Z" fill="#493629"/>
+        <path d="M120 97c16-29 77-41 103-4-27 6-72 6-103 4Z" fill="#bf3039"/>
+        <path d="M113 98c18-14 92-13 118 2" stroke="#173444" stroke-width="5" fill="none"/>
+      </svg>
+      <div class="portrait-caption">Replace with a real team photo</div>
+    </div>
+    <div>
+      <div class="eyebrow">Meet your team lead</div>
+      <h2>Experience to share.<br>A local team to grow with.</h2>
+      <p>Tracey La Rue brings more than two decades in real estate, former California broker experience, and a strong background in sales, customer service and title to leading the West Team. She believes agents do their best work when they can ask questions, share what they know and keep building a business of their own.</p>
+      <p class="quote">“Your business. Better together.”</p>
+      <a class="pill outline" href="#contact">Get to know Tracey</a>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="wrap contact-box">
+    <div><div class="eyebrow">Your next step starts with a conversation</div><h2>Let’s talk about what you want your business to become.</h2><p>Ask about the team, local support, current lead opportunities and the cap. We’ll talk honestly about fit and what you need next.</p></div>
+    <a class="pill" href="mailto:WestTeamAZ@gmail.com?subject=West%20Team%20Recruiting%20Conversation">Email the West Team</a>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>West Team · HomeSmart · 13576 W Camino Del Sol, Suite 22, Sun City West, AZ 85375 · WestTeamAZ@gmail.com</span><span>Your business. Better together.</span></div></footer>
+</body>
+</html>

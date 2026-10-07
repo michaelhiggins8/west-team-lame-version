@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { SiteContainer } from "@/components/site-container";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { getTeamMember } from "@/data/team-members";
 
 export const metadata: Metadata = {
@@ -40,7 +39,6 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
   return (
     <>
-      <SiteHeader />
       <main className="flex-1">
         <section className="relative overflow-hidden bg-cream py-16 md:py-24">
           <div
@@ -50,9 +48,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
           <SiteContainer className="relative">
             <div className="mx-auto max-w-3xl">
-              <p className="animate-fade font-[family-name:var(--font-display)] text-xs font-semibold uppercase tracking-[0.28em] text-gold">
-                {fromTeam ? "Agent introduction" : "Contact"}
-              </p>
+            
               <h1 className="animate-rise mt-4 font-[family-name:var(--font-display)] text-[length:var(--text-display)] font-bold leading-[1.08] tracking-tight text-navy text-balance">
                 {fromTeam && teamMemberName
                   ? `Request an introduction to ${teamMemberName}.`

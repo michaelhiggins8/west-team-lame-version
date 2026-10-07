@@ -24,6 +24,7 @@ export type ContactFormProps = {
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
 const intentOptions: Array<{ value: ContactIntent; label: string }> = [
+   { value: "join", label: "Joining" },
   { value: "buy", label: "Buying" },
   { value: "sell", label: "Selling" },
   { value: "explore", label: "Exploring" },
@@ -284,7 +285,7 @@ export function ContactForm({
             </span>
             <select
               name="intent"
-              defaultValue={initialIntent ?? "explore"}
+              defaultValue={initialIntent ?? "join"}
               className={fieldClassName}
             >
               {intentOptions.map((option) => (

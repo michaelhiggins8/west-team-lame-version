@@ -1,53 +1,67 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { PillLink } from "@/components/ui/pill-link";
-import { Wrap } from "@/components/ui/wrap";
+import { usePathname } from "next/navigation";
 
-/*
- * Root-relative so the nav resolves on every route. Bare "#why" hrefs resolve
- * against the current path, which 404s the scroll target on /contact.
- */
 const NAV_LINKS = [
-  { href: "/#why", label: "Why West Team" },
-  { href: "/#communities", label: "Local Communities" },
-  { href: "/#cap", label: "The Cap" },
-  { href: "/#tracey", label: "Meet Tracey" },
+  { href: "/", label: "Home" },
+  { href: "/team", label: "The Team" },
+  { href: "/#communities", label: "Communities" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
+  function isActive(href: string): boolean {
+    if (href === "/") return pathname === "/";
+    // Anchor links (…/#section) shouldn't drive the active underline — the
+    // section link stays marked by its own page's tab on that page.
+    if (href.includes("#")) return false;
+    if (href.startsWith("/team")) return pathname.startsWith("/team");
+    return pathname === href;
+  }
+
   return (
-    <header className="topbar">
-      <Wrap
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          width: "100%",
-        }}
-      >
-        <Link className="brand" href="/#top" aria-label="West Team home">
-          <Image
-            className="brand-mark"
-            src="/brand/west-team-mark.png"
-            alt=""
-            width={900}
-            height={900}
-            priority
-          />
-          <span>
-            <span className="brand-name">West Team</span>
-            <span className="brand-sub">HomeSmart · Sun City West</span>
-          </span>
+    <header className="wt-topbar">
+      <Link className="wt-brand" href="/" aria-label="West Team home">
+        <Image
+          className="wt-brand-mark"
+          src="/brand/west-team-mark.png"
+          alt=""
+          width={512}
+          height={512}
+          priority
+        />
+        <span className="wt-brand-word">
+          <span className="wt-brand-name">West Team</span>
+          <span className="wt-brand-sub">HomeSmart · Sun City West</span>
+        </span>
+      </Link>
+
+      <nav className="wt-nav" aria-label="Main navigation">
+        {NAV_LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={[
+              "wt-nav-link",
+              isActive(link.href) ? "wt-nav-link-active" : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+
+      <div className="wt-topbar-actions">
+        <Link className="wt-pill wt-pill-ember" href="/contact">
+          Let’s talk
         </Link>
-        <nav className="nav" aria-label="Main navigation">
-          {NAV_LINKS.map((link) => (
-            <Link key={link.href} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-          <PillLink href="/contact">Let’s talk</PillLink>
-        </nav>
-      </Wrap>
+      </div>
     </header>
   );
 }

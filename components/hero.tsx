@@ -24,7 +24,7 @@ export function Hero() {
             West Valley.
           </p>
           <div className="actions">
-            <PillLink href="#why">Meet the West Team</PillLink>
+            <PillLink href="/team">Meet the West Team</PillLink>
             <PillLink href="/contact" variant="outline">
               Talk with Tracey
             </PillLink>

@@ -2,11 +2,10 @@ import Image from "next/image";
 import { Wrap } from "@/components/ui/wrap";
 
 const FOOT_LINKS = [
-  { href: null, label: "Properties" },
-  { href: "#tracey", label: "Team" },
-  { href: null, label: "Home Valuation" },
-  { href: "#contact", label: "Contact" },
-  { href: null, label: "Privacy Policy" },
+  
+  { href: "/team", label: "Team" },
+  { href: "/contact", label: "Contact" },
+  
 ];
 
 const VALUES = ["Experience", "Integrity", "Results"];

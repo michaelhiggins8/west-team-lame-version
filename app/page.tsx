@@ -4,7 +4,6 @@ import { ContactSection } from "@/components/contact-section";
 import { Hero } from "@/components/hero";
 import { ProofBar } from "@/components/proof-bar";
 import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { SupportSection } from "@/components/support-section";
 import { TraceySection } from "@/components/tracey-section";
 import { WhySection } from "@/components/why-section";
@@ -12,7 +11,6 @@ import { WhySection } from "@/components/why-section";
 export default function Home() {
   return (
     <>
-      <SiteHeader />
       <main id="top">
         <Hero />
         <ProofBar />

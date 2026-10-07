@@ -171,7 +171,7 @@ export type TeamMember = {
   name: "Karen McMillan",
   role: "Real Estate Agent",
   bio: "Karen is an Arizona-licensed HomeSmart REALTOR® based in Sun City West and serving buyers and sellers throughout the West Valley. She provides attentive support with home searches, property marketing, and the day-to-day coordination required to move a purchase or sale toward closing.",
-  image: "/team/karen-mcmillan.jpg",
+  image: "/team_head_shots/karen-mcmillan.jpg",
   licenseNumber: "#SA716053000",
   },
   {

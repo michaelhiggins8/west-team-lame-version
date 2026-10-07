@@ -1153,3 +1153,590 @@ a.foot-link:hover {
     }
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * The Team section (/team, /team/[id]) — Airbnb design language, brand palette.
+ * Quiet white gallery wall: monochrome frame, full-bleed imagery, a single
+ * coral (ember) accent used for one primary action per surface.
+ * ------------------------------------------------------------------------- */
+:root {
+  /* Brand palette (replaces Airbnb's achromatic + Rausch set) */
+  --wt-ink: #123245;
+  --wt-slate: #3f5866;
+  --wt-ember: #f45b2a;
+  --wt-amber: #fb8930;
+  --wt-peach: #faa575;
+  --wt-grey: #9aa5ab;
+  --wt-cord: #ebe5df;
+  --wt-paper: #fffdf9;
+
+  /* Role tokens — airbnb.txt roles mapped onto the brand swatches */
+  --wt-canvas: var(--wt-cord);
+  --wt-card: var(--wt-paper);
+  --wt-inverse: var(--wt-ink);
+  --wt-accent: var(--wt-ember);
+  --wt-accent-hover: color-mix(in srgb, var(--wt-ember) 84%, var(--wt-ink));
+  --wt-hairline: color-mix(in srgb, var(--wt-grey) 34%, transparent);
+  --wt-tint: color-mix(in srgb, var(--wt-ink) 5%, var(--wt-paper));
+  --wt-tint-strong: color-mix(in srgb, var(--wt-peach) 45%, var(--wt-paper));
+
+  /* Shape */
+  --wt-radius-card: 12px;
+  --wt-radius-input: 8px;
+  --wt-radius-pill: 9999px;
+
+  /* Elevation — soft layered stack, used only for elevated overlays */
+  --wt-shadow-subtle: rgba(18, 50, 69, 0.02) 0px 0px 0px 1px,
+    rgba(18, 50, 69, 0.04) 0px 2px 6px 0px, rgba(18, 50, 69, 0.08) 0px 4px 8px 0px;
+
+  /* Type */
+  --wt-font: var(
+      --font-inter,
+      "Inter"
+    ),
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --wt-gutter: clamp(20px, 4vw, 40px);
+}
+
+/* Root scope: white-canvas base inside the team section */
+.wt-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--wt-canvas);
+  color: var(--wt-ink);
+  font-family: var(--wt-font);
+  line-height: 1.43;
+  text-rendering: optimizeLegibility;
+}
+
+.wt-root main {
+  flex: 1;
+  width: 100%;
+}
+
+.wt-root :where(h1, h2, h3, h4, p) {
+  margin-top: 0;
+}
+
+/* Top navigation bar — 80px white bar, monochrome tabs, one ember action */
+.wt-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 80px;
+  padding-inline: var(--wt-gutter);
+  background: var(--wt-card);
+  border-bottom: 1px solid var(--wt-hairline);
+}
+
+.wt-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  text-decoration: none;
+  color: var(--wt-ink);
+}
+
+.wt-brand-mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.wt-brand-word {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.wt-brand-name {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+}
+
+.wt-brand-sub {
+  margin-top: 2px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wt-slate);
+}
+
+.wt-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-inline: auto;
+}
+
+.wt-nav-link {
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--wt-slate);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.wt-nav-link:hover {
+  color: var(--wt-ink);
+}
+
+.wt-nav-link-active {
+  color: var(--wt-ink);
+  border-bottom-color: var(--wt-ink);
+}
+
+.wt-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Buttons — pill for the nav CTA, 8px-radius for primary actions */
+.wt-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: var(--wt-radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.wt-pill-ember {
+  background: var(--wt-accent);
+  color: var(--wt-paper);
+}
+
+.wt-pill-ember:hover {
+  background: var(--wt-accent-hover);
+}
+
+.wt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--wt-radius-input);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.wt-btn-inverse {
+  background: var(--wt-inverse);
+  color: var(--wt-paper);
+}
+
+.wt-btn-inverse:hover {
+  background: color-mix(in srgb, var(--wt-ink) 88%, var(--wt-slate));
+}
+
+.wt-btn-ghost {
+  border-color: var(--wt-ink);
+  background: transparent;
+  color: var(--wt-ink);
+}
+
+.wt-btn-ghost:hover {
+  background: var(--wt-tint);
+}
+
+.wt-btn-ember {
+  background: var(--wt-accent);
+  color: var(--wt-paper);
+}
+
+.wt-btn-ember:hover {
+  background: var(--wt-accent-hover);
+}
+
+.wt-root :is(a, button):focus-visible {
+  outline: 2px solid var(--wt-accent);
+  outline-offset: 2px;
+}
+
+/* Grid page hero — quiet, title-led */
+.wt-hero {
+  padding: 52px var(--wt-gutter) 44px;
+}
+
+.wt-page-title {
+  margin: 0;
+  font-family: var(--wt-font);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: -0.02em;
+  color: var(--wt-ink);
+}
+
+.wt-lede {
+  max-width: 620px;
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: var(--wt-slate);
+}
+
+.wt-count {
+  display: inline-flex;
+  align-items: center;
+  margin: 22px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--wt-hairline);
+  font-size: 13px;
+  color: var(--wt-slate);
+}
+
+/* Member grid — full-bleed, photograph-first */
+.wt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 40px 22px;
+  padding: 4px var(--wt-gutter) 96px;
+}
+
+.wt-card {
+  border-radius: var(--wt-radius-card);
+}
+
+.wt-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.wt-card-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--wt-radius-card);
+  background: var(--wt-tint);
+}
+
+.wt-card-media img {
+  transition: transform 0.45s ease;
+}
+
+.wt-card-link:hover .wt-card-media img {
+  transform: scale(1.02);
+}
+
+.wt-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 6px 12px;
+  border-radius: var(--wt-radius-pill);
+  background: var(--wt-card);
+  box-shadow: var(--wt-shadow-subtle);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--wt-ink);
+}
+
+.wt-card-body {
+  padding-top: 12px;
+}
+
+.wt-card-name {
+  overflow: hidden;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: var(--wt-ink);
+}
+
+.wt-card-role {
+  margin: 2px 0 0;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--wt-slate);
+}
+
+.wt-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--wt-hairline);
+}
+
+.wt-card-license {
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--wt-slate);
+}
+
+.wt-card-reviews {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--wt-ink);
+  transition: color 0.15s ease;
+}
+
+.wt-card-reviews svg {
+  transition: transform 0.15s ease;
+}
+
+.wt-card-reviews:hover {
+  color: var(--wt-accent);
+}
+
+.wt-card-reviews:hover svg {
+  transform: translate(1px, -1px);
+}
+
+/* Portrait — initials fallback when a head shot is unavailable */
+.wt-photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: var(--wt-tint-strong);
+  color: var(--wt-ink);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Profile page (/team/[id]) */
+.wt-profile-shell {
+  padding: 56px var(--wt-gutter) 96px;
+}
+
+.wt-profile-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 36px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--wt-ink);
+  transition: color 0.15s ease;
+}
+
+.wt-profile-back:hover {
+  color: var(--wt-accent);
+}
+
+.wt-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 440px) minmax(0, 1fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.wt-profile-media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--wt-radius-card);
+  background: var(--wt-tint);
+}
+
+.wt-profile-name {
+  margin: 0;
+  font-family: var(--wt-font);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.43;
+  letter-spacing: -0.02em;
+  color: var(--wt-ink);
+}
+
+.wt-profile-role {
+  margin: 4px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--wt-slate);
+}
+
+.wt-profile-detail {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid var(--wt-hairline);
+}
+
+.wt-profile-detail-label {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--wt-slate);
+}
+
+.wt-profile-bio {
+  max-width: 60ch;
+  margin: 24px 0 0;
+  font-size: 14px;
+  color: var(--wt-ink);
+}
+
+.wt-profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* Footer — multi-column link grid on canvas */
+.wt-footer {
+  padding: 56px var(--wt-gutter) 28px;
+  background: var(--wt-canvas);
+  border-top: 1px solid var(--wt-hairline);
+}
+
+.wt-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px;
+}
+
+.wt-footer-col p {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wt-ink);
+}
+
+.wt-footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wt-footer-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--wt-slate);
+  transition: color 0.15s ease;
+}
+
+.wt-footer-link:hover {
+  color: var(--wt-ink);
+}
+
+.wt-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 24px;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--wt-hairline);
+  font-size: 12px;
+  color: var(--wt-slate);
+}
+
+.wt-footer-bottom p {
+  margin: 0;
+}
+
+.wt-eho {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.wt-eho img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Motion — presence, not noise */
+@keyframes wt-rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.wt-rise {
+  animation: wt-rise-in 0.7s var(--ease-out-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-rise,
+  .wt-card-media img {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Responsive — compact cards, stacked profile */
+@media (max-width: 860px) {
+  .wt-nav {
+    display: none;
+  }
+
+  .wt-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wt-profile-shell {
+    padding-top: 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wt-brand-sub {
+    display: none;
+  }
+
+  .wt-topbar {
+    height: 72px;
+  }
+}

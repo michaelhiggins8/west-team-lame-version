@@ -1,4 +1,10 @@
-export type ContactIntent = "buy" | "sell" | "explore" | "valuation" | "other";
+export type ContactIntent =
+  | "join"
+  | "buy"
+  | "sell"
+  | "explore"
+  | "valuation"
+  | "other";
 
 export type ContactSource =
   | "home"

@@ -39,7 +39,7 @@ export const contactInquirySchema = z.object({
     .min(1, "Message is required")
     .max(5000, "Message is too long"),
   intent: z
-    .enum(["buy", "sell", "explore", "valuation", "other"])
+    .enum(["join", "buy", "sell", "explore", "valuation", "other"])
     .optional(),
   source: z
     .enum(["home", "contact", "team", "property", "home-valuation"])
